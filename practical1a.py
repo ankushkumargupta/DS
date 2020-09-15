@@ -24,7 +24,7 @@ def insertionSort(arr):
          j -= 1
       arr[j+1] = key
 # main
-arr = ['t','u','t','o','r','i','a','l']
+arr = ['r','a','m','k','a','n','a','a','m',]
 insertionSort(arr)
 print ("The sorted array is:")
 for i in range(len(arr)):
