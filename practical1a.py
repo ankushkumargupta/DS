@@ -1,46 +1,37 @@
-#selection sort
-def selection_sort(num):
-        for i in range(len(num)):
-            lowest_value_index=i
-            for j in range(i+1,len(num)):
-              if num[j]<num[lowest_value_index]:
-                         lowest_value_index=j  
-                         num[i],num[lowest_value_index]=num[lowest_value_index],num[i]
+class ArrayModification:
+            
+    def linear_search(self,lst,n):
+        for i in range(len(lst)):
+            if lst[i] == n:
+                return f'Position :{i}'
+        return -1
+    
+    def insertion_sort(self,lst):
+        for i in range(len(lst)):
+            
+            index = lst[i]
+            
+            k = i - 1
+            
+            while k >= 0 and lst[k] > index:
+                lst[k + 1] = lst[k]
+                k -= 1
                 
-          
-          
+            lst[k+1]  = index
+            
+        return lst
+    
+    def merge(self,lst,lst2):
+         lst.extend(lst2)
+         print(lst)
+    
+    def reverse(self,lst):
+        return lst[::-1]
 
-list=[1,2,3,4]
-selection_sort(list)
-print(list)
-
-#insertion sort
-def insertionSort(arr):
-   for i in range(1, len(arr)):
-      key = arr[i]
-      j = i-1
-      while j >=0 and key < arr[j] :
-         arr[j+1] = arr[j]
-         j -= 1
-      arr[j+1] = key
-# main
-arr = ['r','a','m','k','a','n','a','a','m',]
-insertionSort(arr)
-print ("The sorted array is:")
-for i in range(len(arr)):
-   print (arr[i])
-   
-#bubble sort
-def bubble_sort(num):
-     swap=True
-     while swap:
-            swap=False
-            for i in range(len(num)-1):
-                 if num[i]>num[i+1]:
-                       num[i],num[i+1]=num[i+1],num[i]
-                       swap=True
-                
-             
- list=[23,14,66,8,2]
-bubble_sort(list)
-print(list)
+lst = [2,9,1,7,3,5,2]
+lst2 = [4,6,8,9,4,5]
+Arrmod = ArrayModification()
+print(Arrmod.linear_search(lst,3))
+print(Arrmod.merge(lst,lst2))
+print(Arrmod.insertion_sort(lst))
+print(Arrmod.reverse(lst))
